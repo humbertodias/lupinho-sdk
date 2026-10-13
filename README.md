@@ -10,12 +10,14 @@ Ambiente de desenvolvimento para jogos do Lupinho (simulador Lupi). Monitora a p
 
 O workflow [`.github/workflows/docker-hub.yml`](.github/workflows/docker-hub.yml) publica `DOCKERHUB_USERNAME/lupinho-sdk` ao fazer push na `main`, ao criar uma tag `v*` ou ao disparar o workflow manualmente.
 
-No repositório, em **Settings → Secrets and variables → Actions**:
+No environment **DockerHub** do repositório (**Settings → Environments → DockerHub**):
 
 | Tipo | Nome | Valor |
 |------|------|--------|
-| Variable | `DOCKERHUB_USERNAME` | usuário do Docker Hub |
+| Variable ou Secret | `DOCKERHUB_USERNAME` | usuário do Docker Hub |
 | Secret | `DOCKERHUB_TOKEN` | access token com permissão de escrita |
+
+Um re-run reutiliza o commit do disparo original. Depois de mudar o workflow ou as credenciais, use **Run workflow** de novo na branch atual.
 
 Tags geradas: `latest` na branch padrão e em releases `v*`, a versão semver (`1.2.3`, `1.2`) e o SHA curto do commit.
 
