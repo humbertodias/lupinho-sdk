@@ -8,7 +8,7 @@ Ambiente de desenvolvimento para jogos do Lupinho (simulador Lupi). Monitora a p
 
 ## Imagem no Docker Hub
 
-O workflow [`.github/workflows/docker-hub.yml`](.github/workflows/docker-hub.yml) publica `DOCKERHUB_USERNAME/lupinho-sdk` ao fazer push na `main`, ao criar uma tag `v*` ou ao disparar o workflow manualmente.
+O workflow [`.github/workflows/docker-hub.yml`](.github/workflows/docker-hub.yml) publica `DOCKERHUB_USERNAME/lupinho-sdk` para `linux/amd64` e `linux/arm64` ao fazer push na `main`, ao criar uma tag `v*` ou ao disparar o workflow manualmente. Cada arquitetura é compilada no runner nativo e as duas imagens entram no mesmo manifesto.
 
 No environment **DockerHub** do repositório (**Settings → Environments → DockerHub**):
 
